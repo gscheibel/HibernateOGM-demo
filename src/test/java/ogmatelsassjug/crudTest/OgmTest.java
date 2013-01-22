@@ -1,17 +1,19 @@
 package ogmatelsassjug.crudTest;
 
-import ogmatelsassjug.models.Author;
 import ogmatelsassjug.models.Post;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
+import org.jboss.shrinkwrap.api.Archive;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
+import org.jboss.shrinkwrap.api.asset.Asset;
 import org.jboss.shrinkwrap.api.asset.EmptyAsset;
+import org.jboss.shrinkwrap.api.asset.StringAsset;
 import org.jboss.shrinkwrap.api.spec.JavaArchive;
-import org.junit.Before;
+import org.jboss.shrinkwrap.descriptor.api.Descriptors;
+import org.jboss.shrinkwrap.descriptor.api.spec.se.manifest.ManifestDescriptor;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import javax.annotation.Resource;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -39,11 +41,12 @@ public class OgmTest {
    UserTransaction ut;
 
    @Deployment
-   public static JavaArchive createDeployment(){
+   public static Archive<?> createDeployment(){
       return ShrinkWrap.create(JavaArchive.class)
-            .addPackage(Author.class.getPackage())
+            .addPackage(Post.class.getPackage())
             .addAsResource("ogm-persistence.xml", "META-INF/persistence.xml")
-            .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
+            .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml")
+            .addAsResource("manifest.mf", "META-INF/MANIFEST.MF");
    }
 
    @Test
