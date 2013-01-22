@@ -14,15 +14,16 @@ import static org.hamcrest.MatcherAssert.assertThat;
  * @author Guillaume Scheibel <guillaume.scheibel@gmail.com>
  */
 @RunWith(Arquillian.class)
-public class OrmTest extends AbstractTest {
+public class OgmMongoDBTest extends AbstractTest {
 
    @Deployment
-   public static JavaArchive createDeployment() {
+   public static JavaArchive createDeployment(){
       return ShrinkWrap.create(JavaArchive.class)
             .addPackage(Post.class.getPackage())
-            .addClass(OrmTest.class)
+            .addClass(OgmMongoDBTest.class)
             .addClass(AbstractTest.class)
-            .addAsResource("persistencefiles/orm-persistence.xml", "META-INF/persistence.xml")
-            .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
+            .addAsResource("persistencefiles/ogm-mongodb-persistence.xml", "META-INF/persistence.xml")
+            .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml")
+            .addAsResource("manifestfiles/manifest-mongodb.mf", "META-INF/MANIFEST.MF");
    }
 }
