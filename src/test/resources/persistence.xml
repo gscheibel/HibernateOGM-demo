@@ -13,5 +13,22 @@
             <property name="hibernate.hbm2ddl.auto" value="create-drop" />
             <property name="hibernate.connection.release_mode" value="after_transaction" />
         </properties>
+
+        <!-- OGM - MongoDB config
+        <provider>org.hibernate.ogm.jpa.HibernateOgmPersistence</provider>
+        <properties>
+        <property name="hibernate.ogm.datastore.provider" value="MONGODB" />
+        <property name="hibernate.ogm.mongodb.host" value="127.0.0.1"/>
+        <property name="hibernate.ogm.mongodb.port" value="27017"/>
+        <property name="hibernate.ogm.mongodb.database" value="ogmatelsassjug"/>
+        -->
+
+        <!-- OGM - Ehcache config
+            <provider>org.hibernate.ogm.jpa.HibernateOgmPersistence</provider>
+            <properties>
+                <property name="hibernate.ogm.datastore.provider" value="EHCACHE" />
+            </properties>
+        -->
+
     </persistence-unit>
 </persistence>
