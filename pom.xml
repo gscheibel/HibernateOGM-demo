@@ -83,6 +83,12 @@
             <version>${ogmVersion}</version>
        </dependency>
 
+        <dependency>
+            <groupId>org.hibernate.ogm</groupId>
+            <artifactId>hibernate-ogm-ehcache</artifactId>
+            <version>${ogmVersion}</version>
+        </dependency>
+
     </dependencies>
 
 </project>
