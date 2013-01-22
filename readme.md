@@ -12,4 +12,7 @@ Module installation:
    - Add OGM core jar
 - In modules/org/hibernate/ogm/mongodb/main
    - Create module.xml
-   - Add OGM-MongoDB and mongodb-java-driver
+   - Add OGM-MongoDB and mongodb-java-driver jars
+- In modules/org/hibernate/ogm/ehcache/main
+   - Create module.xml
+   - Add OGM-Ehcache and ehcache core jars
