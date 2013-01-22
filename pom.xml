@@ -81,8 +81,7 @@
             <groupId>org.hibernate.ogm</groupId>
             <artifactId>hibernate-ogm-mongodb</artifactId>
             <version>${ogmVersion}</version>
-            <scope>provided</scope>
-        </dependency>
+       </dependency>
 
     </dependencies>
 

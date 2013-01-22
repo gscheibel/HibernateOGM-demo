@@ -8,12 +8,13 @@
     <persistence-unit name="OGMPU" transaction-type="JTA">
         <provider>org.hibernate.ogm.jpa.HibernateOgmPersistence</provider>
         <properties>
-            <property name="hibernate.ogm.datastore.provider" value="mongodb" />
             <property name="hibernate.connection.release_mode" value="after_transaction" />
-
+            <property name="hibernate.ogm.datastore.provider" value="MONGODB" />
             <property name="hibernate.ogm.mongodb.host" value="127.0.0.1"/>
             <property name="hibernate.ogm.mongodb.port" value="27017"/>
             <property name="hibernate.ogm.mongodb.database" value="ogmatelsassjug"/>
+
+            <property name="jboss.as.jpa.adapterModule" value="org.jboss.as.jpa.hibernate:4"/>
         </properties>
     </persistence-unit>
 </persistence>
