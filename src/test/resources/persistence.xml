@@ -6,29 +6,31 @@
         http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
 
     <persistence-unit name="OGMPU" transaction-type="JTA">
-        <jta-data-source>java:jboss/datasources/OGMAtJUGDS</jta-data-source>
+        <!--jta-data-source>java:jboss/datasources/OGMAtJUGDS</jta-data-source>
         <properties>
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="false"/>
             <property name="hibernate.hbm2ddl.auto" value="create-drop" />
-            <property name="hibernate.connection.release_mode" value="after_transaction" />
-        </properties>
 
-        <!-- OGM - MongoDB config
+        -->
+
+        <!-- OGM -->
         <provider>org.hibernate.ogm.jpa.HibernateOgmPersistence</provider>
         <properties>
-        <property name="hibernate.ogm.datastore.provider" value="MONGODB" />
-        <property name="hibernate.ogm.mongodb.host" value="127.0.0.1"/>
-        <property name="hibernate.ogm.mongodb.port" value="27017"/>
-        <property name="hibernate.ogm.mongodb.database" value="ogmatelsassjug"/>
-        -->
+            <!-- Ehcache config-->
+            <!--<property name="hibernate.ogm.datastore.provider" value="EHCACHE" />-->
 
-        <!-- OGM - Ehcache config
-            <provider>org.hibernate.ogm.jpa.HibernateOgmPersistence</provider>
-            <properties>
-                <property name="hibernate.ogm.datastore.provider" value="EHCACHE" />
-            </properties>
-        -->
+            <!-- MongoDB config -->
+            <property name="hibernate.ogm.datastore.provider" value="MONGODB" />
+            <property name="hibernate.ogm.mongodb.host" value="127.0.0.1"/>
+            <property name="hibernate.ogm.mongodb.port" value="27017"/>
+            <property name="hibernate.ogm.mongodb.database" value="ogmatelsassjug"/>
 
+
+            <property name="hibernate.connection.release_mode" value="after_transaction" />
+            <property name="jboss.as.jpa.adapterModule" value="org.jboss.as.jpa.hibernate:4"/>
+            <property name="hibernate.search.default.directory_provider" value="filesystem"/>
+            <property name="hibernate.search.default.indexBase" value="indexes"/>
+        </properties>
     </persistence-unit>
 </persistence>
