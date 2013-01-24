@@ -4,7 +4,8 @@ Hibernate OGM demo
 This demo is used to present [Hibernate OGM](http://hibernate.org/subprojects/ogm.html) with both [EhCache](http://www.ehcache.org/) and [MongoDB](http://www.mongodb.org) modules.
 
 It runs on [JBoss AS 7.1](http://www.jboss.org/as7) using [Arquillian](http://www.arquillian.org) with the remote container.
-
+The part is to run tests by using JPA and Hibernate ORM (default configuration) and then you can switch to OGM.
+The only test that won't pass with OGM is the JPQL test because in the current version of OGM it's not supported yet that why Hibernate Search is used instead to run queries
 
 ##Module installation:
 In order to have the best integration with JBoss AS, Hibernate OGM is installed as a module (just as RDMBS connectors).
