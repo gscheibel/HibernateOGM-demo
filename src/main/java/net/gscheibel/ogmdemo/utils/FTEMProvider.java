@@ -1,4 +1,4 @@
-package ogmatelsassjug.utils;
+package net.gscheibel.ogmdemo.utils;
 
 import javax.enterprise.inject.Produces;
 import javax.persistence.EntityManager;

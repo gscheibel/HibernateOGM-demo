@@ -1,4 +1,4 @@
-package ogmatelsassjug.models;
+package net.gscheibel.ogmdemo.models;
 
 import org.hibernate.search.annotations.Analyze;
 import org.hibernate.search.annotations.Field;

@@ -4,16 +4,31 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>OgmAtElsassJUG</groupId>
-    <artifactId>OgmAtElsassJUG</artifactId>
+    <groupId>net.gscheibel</groupId>
+    <artifactId>hibernateOGM-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
+        <jdkVersion>1.7</jdkVersion>
         <ogmVersion>4.0.0-SNAPSHOT</ogmVersion>
         <hamcrestVersion>1.3</hamcrestVersion>
         <arquillianVersion>1.0.3.Final</arquillianVersion>
         <shrinkWrapVersion>2.0.0-alpha-7</shrinkWrapVersion>
     </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.0</version>
+                <configuration>
+                    <source>${jdkVersion}</source>
+                    <target>${jdkVersion}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <dependencies>
         <dependency>
@@ -22,13 +37,6 @@
             <version>1.0.0.Final</version>
             <scope>provided</scope>
             <type>pom</type>
-        </dependency>
-
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.21</version>
-            <scope>provided</scope>
         </dependency>
 
         <dependency>

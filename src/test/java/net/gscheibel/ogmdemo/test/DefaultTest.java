@@ -1,8 +1,8 @@
-package ogmatelsassjug.test;
+package net.gscheibel.ogmdemo.test;
 
-import ogmatelsassjug.models.Author;
-import ogmatelsassjug.models.Post;
-import ogmatelsassjug.utils.FTEMProvider;
+import net.gscheibel.ogmdemo.models.Author;
+import net.gscheibel.ogmdemo.models.Post;
+import net.gscheibel.ogmdemo.utils.FTEMProvider;
 import org.hibernate.search.jpa.FullTextEntityManager;
 import org.hibernate.search.jpa.FullTextQuery;
 import org.hibernate.search.query.DatabaseRetrievalMethod;
@@ -151,7 +151,7 @@ public class DefaultTest {
    @Test
    public void jpqlTest() throws SystemException, NotSupportedException, HeuristicRollbackException, HeuristicMixedException, RollbackException {
       final Long id = 6L;
-      final String title = "testing query";
+      final String title = "testing JPQL query";
       ut.begin();
       em.persist(new Post(id, title));
       ut.commit();
@@ -168,7 +168,7 @@ public class DefaultTest {
    @Test
    public void hsearchQueryTest() throws SystemException, NotSupportedException, HeuristicRollbackException, HeuristicMixedException, RollbackException {
       final Long id = 7L;
-      final String title = "testing query";
+      final String title = "testing HSearch query";
       ut.begin();
       em.persist(new Post(id, title));
       ut.commit();
